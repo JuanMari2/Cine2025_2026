@@ -37,26 +37,39 @@ function seleccionarPeli(){
 }
 
 /*Se dibujan las localidades de la sala diferenciando si están disponibles o no  */
-function pintarButacas(){
-    contenedor.innerHTML="<br>";
-    contenedor.innerHTML+="<h3>PATIO DE BUTACAS</h3>"
-    for (i=1;i<=numButacas;i++){
-            if (vendidas.includes(i)){
-                contenedor.innerHTML+="<button id='butaca"+i+"' class='ocupado'>"+i+"</button> ";
-            }
-            else{
-                contenedor.innerHTML+="<button id='butaca"+i+"' class='libre' onclick='seleccionar();' title='Seleccionar asiento'>"+i+"</button> ";
-            }
-            if (i%15==0){
-                contenedor.innerHTML+="<br>";
-            }
+function pintarButacas() {
+    contenedor.innerHTML = "<br>";
+    contenedor.innerHTML += "<h3>PATIO DE BUTACAS</h3>";
+
+    for (i = 1; i <= numButacas; i++) {
+        if (vendidas.includes(i)) {
+            contenedor.innerHTML += "<button id='butaca" + i + "' class='ocupado'>" + i + "</button> ";
         }
-        if (numButacas==vendidas.length){
-            contenedor.innerHTML+="<br><img  src='img/soldout.png' alt='Sin localidades'title='Localidades agotadas. Seleccione otra película.'>"
+        else {
+            contenedor.innerHTML += "<button id='butaca" + i + "' class='libre' onclick='seleccionar();' title='Seleccionar asiento'>" + i + "</button> ";
         }
-        else{
-            contenedor.innerHTML+="<br><br><button id='btnConfirm' onclick='confirmarVenta();' title='Comprar entradas'>Comprar</button>"
+        if (i % 15 == 0) {
+            contenedor.innerHTML += "<br>";
         }
+    }
+
+    if (numButacas == vendidas.length) {
+        contenedor.innerHTML += "<br><img src='img/soldout.png' alt='Sin localidades' title='Localidades agotadas. Seleccione otra película.'>";
+    }
+    else {
+        contenedor.innerHTML += "<br><br><button id='btnConfirm' onclick='confirmarVenta();' title='Comprar entradas'>Comprar</button>";
+    }
+
+    // --- NUEVO: comprobar ocupación y mostrar aviso ---
+    let ocupacion = vendidas.length / numButacas;
+    let warningBox = document.getElementById("warning");
+    if (warningBox) {   // solo si existe el div en el HTML
+        if (ocupacion > 0.5) {
+            warningBox.innerText = "⚠️ WARNING: La sala tiene más del 50% de ocupación. ¡Date prisa en reservar!";
+        } else {
+            warningBox.innerText = "";
+        }
+    }
 }
 
 /*Cuando se selecciona una localidad se comprueba si esta libre y se guarda o se borra
