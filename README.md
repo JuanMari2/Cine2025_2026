@@ -36,6 +36,7 @@ Poder hostear un repositorio local desde Docker Desktop, desde un container con 
 
 Este archivo se crea en "docker/ngnix/", con el siguiente código ábrelo en el notepad o tu editor de texto favorito):
 
+```nginx
 server {
     listen 80;
     server_name _;
@@ -47,6 +48,7 @@ server {
         try_files $uri $uri/ =404;
     }
 }
+```
 
 ![alt text](./img_readme/5-1.png)
 
