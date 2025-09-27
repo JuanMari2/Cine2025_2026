@@ -56,7 +56,6 @@ server {
 
 Este archivo se crea en "CINE2025CURSO0GIT-main", con el siguiente código (ábrelo en el notepad o tu editor de texto favorito): 
 
-```yaml
 services:
   nginx:
     image: nginx:alpine             # Este campo puede variar si tu imagen ngnix es distinta a esta.
