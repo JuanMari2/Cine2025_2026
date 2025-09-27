@@ -47,6 +47,7 @@ server {
         try_files $uri $uri/ =404;
     }
 }
+```nginx
 
 ![alt text](./img_readme/5-1.png)
 
@@ -67,7 +68,7 @@ services:
       - ./:/usr/share/nginx/html:ro
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
-```
+```yaml
 
 ![alt text](./img_readme/7-1.png)
 
