@@ -54,7 +54,7 @@ server {
 
 ![alt text](./img_readme/6-1.png)
 
-Este archivo se crea en "CINE2025CURSO0GIT-main", con el siguiente código (ábrelo en el notepad o tu editor de texto favorito): 
+Este archivo se crea en "CINE2025CURSO0GIT-main", con el siguiente código (ábrelo en el notepad o tu editor de texto favorito):  
 
 ```yaml
 services:
@@ -67,6 +67,7 @@ services:
       - ./:/usr/share/nginx/html:ro
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
+```
 
 ![alt text](./img_readme/7-1.png)
 
