@@ -35,7 +35,7 @@ Poder hostear un repositorio local desde Docker Desktop, desde un container con 
 ![alt text](./img_readme/4-1.png)
 
 Este archivo se crea en "docker/ngnix/", con el siguiente código ábrelo en el notepad o tu editor de texto favorito):  
-
+```nginx
 server {
     listen 80;
     server_name _;
@@ -56,13 +56,14 @@ server {
 
 Este archivo se crea en "CINE2025CURSO0GIT-main", con el siguiente código (ábrelo en el notepad o tu editor de texto favorito): 
 
+```yaml
 services:
   nginx:
-    image: nginx:alpine 			# Este campo puede variar si tu imagen ngnix es distinta a esta.
-    container_name: cine2025curso0git-main 	# Pon aquí el nombre te tu container!
+    image: nginx:alpine             # Este campo puede variar si tu imagen ngnix es distinta a esta.
+    container_name: cine2025curso0git-main    # Pon aquí el nombre de tu container!
     ports:
-      - "8082:80"				# Si no funciona con "8080:80", probar con "8081:80" o el se usa aquí.
-    volumes:					# Aquí van los parámetros para los volúmenes del docker, dejarlos tal cuál.
+      - "8082:80"                   # Si no funciona con "8080:80", probar con "8081:80" u otro.
+    volumes:                        # Aquí van los parámetros para los volúmenes del docker, dejarlos tal cuál.
       - ./:/usr/share/nginx/html:ro
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
