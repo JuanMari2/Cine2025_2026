@@ -22,7 +22,7 @@ Poder hostear un repositorio local desde Docker Desktop, desde un container con 
 
 - Se debe crear la siguiente estructura de directorios:  
 
-![alt text](1-1.jpg)
+![alt text](./img_readme/1-1.jpg)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -30,9 +30,9 @@ Poder hostear un repositorio local desde Docker Desktop, desde un container con 
 
 #### 🔹 Archivo "default.conf"
 
-![alt text](2-1.png)
-![alt text](3-1.png)
-![alt text](4-1.png)
+![alt text](./img_readme/2-1.png)
+![alt text](./img_readme/3-1.png)
+![alt text](./img_readme/4-1.png)
 
 Este archivo se crea en "docker/ngnix/", con el siguiente código ábrelo en el notepad o tu editor de texto favorito):  
 
@@ -48,11 +48,11 @@ server {
     }
 }
 
-![alt text](5-1.png)
+![alt text](./img_readme/5-1.png)
 
 #### 🔹 Archivo "docker-compose.yml" 
 
-![alt text](6-1.png)
+![alt text](./img_readme/6-1.png)
 
 Este archivo se crea en "CINE2025CURSO0GIT-main", con el siguiente código (ábrelo en el notepad o tu editor de texto favorito): 
 
@@ -67,7 +67,7 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
 
-![alt text](7-1.png)
+![alt text](./img_readme/7-1.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ Para este paso, se va abrir la terminal (cmd, recomendado abrilo como administra
 
 	-> docker compose down
 
-![alt text](8-1.png) 
+![alt text](./img_readme/8-1.png) 
 
 Con el fin de cerrar y eliminar el contenedor con el mismo nombre del que se va a crear en el siguiente intento. Este paso es solo si hay algún error a la hora de hostear la página web de tu proyecto.
 
@@ -87,18 +87,18 @@ Con el fin de cerrar y eliminar el contenedor con el mismo nombre del que se va 
 
 - Lo siguiente que hay que hacer, es situarse en el directorio raíz del repositorio.  
 
-![alt text](9-1.png)* 
+![alt text](./img_readme/9-1.png)* 
 
 - Ahora se usará el comando:
 
 	-> docker compose up -d
 
-![alt text](10-1.png)* 
+![alt text](./img_readme/10-1.png)* 
 
 Esto descargará la imagen de "nginx:alpine", en caso de no tenerla previamente. Luego, creará y arrancará el contenedor definido en el archivo docker-compose.yml, y desde el docker.desktop verás el container y la imagen creadas como las últimas mostradas en su respectiva columna.
 
-![alt text](11-1.png)
-![alt text](12-1.png)
+![alt text](./img_readme/11-1.png)
+![alt text](./img_readme/12-1.png)
 
 - Ahora se usará el comando:
 
@@ -106,7 +106,7 @@ Esto descargará la imagen de "nginx:alpine", en caso de no tenerla previamente.
 
 Se realiza con el fin de verificar que el contenedor esté corriendo.
 
-![alt text](13-1.png)
+![alt text](./img_readme/13-1.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ Utiliza tu navegador preferido para comprobar el hosteo, y escribe en la URl lo 
 
 	-> http://localhost:8082/
 
-![alt text](14-1.png)
+![alt text](./img_readme/14-1.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
